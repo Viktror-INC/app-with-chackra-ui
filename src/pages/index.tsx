@@ -1,9 +1,30 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import { Inter } from "@next/font/google";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  ColorModeScript,
+  Divider,
+  Heading,
+  Stack,
+  StackDivider,
+  Image,
+  Grid,
+  SimpleGrid,
+  Container,
+} from "@chakra-ui/react";
 
-const inter = Inter({ subsets: ['latin'] })
+import { theme } from "theme/index";
+// import Image from "next/image";
+
+const inter = Inter({ subsets: ["latin"] });
+
+const accItems = [];
 
 export default function Home() {
   return (
@@ -14,110 +35,99 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <Container>
+        <SimpleGrid
+          minChildWidth="220px"
+          spacing="40px"
+          justifyContent="center"
+        >
+          <Card maxW="sm">
+            <CardBody>
               <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                alt="Green double couch with wooden legs"
               />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Living room Sofa</Heading>
+                <p>
+                  This sofa is perfect for modern tropical spaces, baroque
+                  inspired spaces, earthy toned spaces and for people who love a
+                  chic design with a sprinkle of vintage design.
+                </p>
+                <p>$450</p>
+              </Stack>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <ButtonGroup spacing="2">
+                <Button variant="solid" colorScheme="blue">
+                  Buy now
+                </Button>
+                <Button variant="ghost" colorScheme="blue">
+                  Add to cart
+                </Button>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
+          <Card maxW="sm">
+            <CardBody>
+              <Image
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                alt="Green double couch with wooden legs"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Living room Sofa</Heading>
+                <p>
+                  This sofa is perfect for modern tropical spaces, baroque
+                  inspired spaces, earthy toned spaces and for people who love a
+                  chic design with a sprinkle of vintage design.
+                </p>
+                <p>$450</p>
+              </Stack>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <ButtonGroup spacing="2">
+                <Button variant="solid" colorScheme="blue">
+                  Buy now
+                </Button>
+                <Button variant="ghost" colorScheme="blue">
+                  Add to cart
+                </Button>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
+          <Card maxW="sm">
+            <CardBody>
+              <Image
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                alt="Green double couch with wooden legs"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">Living room Sofa</Heading>
+                <p>
+                  This sofa is perfect for modern tropical spaces, baroque
+                  inspired spaces, earthy toned spaces and for people who love a
+                  chic design with a sprinkle of vintage design.
+                </p>
+                <p>$450</p>
+              </Stack>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <ButtonGroup spacing="2">
+                <Button variant="solid" colorScheme="blue">
+                  Buy now
+                </Button>
+                <Button variant="ghost" colorScheme="blue">
+                  Add to cart
+                </Button>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
+        </SimpleGrid>
+      </Container>
     </>
-  )
+  );
 }
